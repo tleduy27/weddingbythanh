@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>💗 Duy Thành & Thùy Dương</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- App CSS -->
+  <link href="style.css" rel="stylesheet" />
+  
+</head>
+
+
+<body>
+  <!-- Audio -->
+  <audio id="bgMusic" loop muted>
+    <source src="./music/maibennhau.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Music Toggle Button -->
+  <button id="musicToggle" class="music-btn" aria-label="Bật / Tắt nhạc">
+    <i class="fa-solid fa-music"></i>
+  </button>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__inner">
+      <h1 class="couple">Duy Thành 💗 Thùy Dương</h1>
+
+      <p class="tagline">💍 Hành trình tình yêu khép lại để mở ra hạnh phúc vĩnh cửu 💖</p>
+      <p class="date">Ngày cưới: 01/11/2025</p>
+      <div id="countdown" class="countdown" aria-label="Đếm ngược ngày cưới">
+        <div class="time"><b id="dd">00</b><small>NGÀY</small></div>
+        <div class="time"><b id="hh">00</b><small>GIỜ</small></div>
+        <div class="time"><b id="mm">00</b><small>PHÚT</small></div>
+        <div class="time"><b id="ss">00</b><small>GIÂY</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COUPLE -->
+  <section class="couple-wrap container">
+    <h2 class="section-title">Giới thiệu cặp đôi</h2>
+    <div class="divider"><span>💎</span></div>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-12 col-md-6 col-lg-5">
+        <div class="person">
+          <div class="photo"><img src="./images/thanhlev2.jpg" alt="Chú rể Duy Thành" loading="lazy"></div>
+          <div class="name">Duy Thành</div>
+          <div class="role">THE GROOM</div>
+          <p class="desc">Chú rể Duy Thành – điềm đạm, chân thành và đặc biệt là nấu ăn rất ngon. Anh là người luôn quan
+            tâm bằng hành động, luôn biết cách khiến cô dâu mỉm cười mỗi ngày</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-5">
+        <div class="person">
+          <div class="photo"><img src="./images/GTcodau.jpg" alt="Cô dâu Thùy Dương" loading="lazy"></div>
+          <div class="name">Thùy Dương</div>
+          <div class="role">THE BRIDE</div>
+          <p class="desc">Cô dâu Thuỳ Dương – dịu dàng, ấm áp và luôn mang đến năng lượng tích cực cho mọi người xung
+            quanh. Cô là người yêu thích những điều nhỏ bé, giản dị và luôn nhìn thế giới bằng ánh mắt đầy yêu thương.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY SECTION -->
+  <section id="story" class="story container py-5">
+    <h2 class="section-title">Hành trình yêu thương</h2>
+    <div class="divider">🌸</div>
+
+    <div class="timeline">
+      <div class="timeline-item left">
+        <div class="content">
+          <h4>🌱 Ngày đầu gặp gỡ</h4>
+          <div class="img-wrap">
+            <img src="./images/Landaugapgo.jpg" alt="Ngày đầu gặp Dương tại lớp Tiếng Anh ở FSoft">
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="timeline-item right">
+        <div class="content">
+          <h4>☕ Buổi hẹn đầu tiên</h4>
+          <div class="img-wrap">
+            <img src="./images/henhodautien.jpg" alt="Ngày đầu gặp Dương tại lớp Tiếng Anh ở FSoft">
+          </div>
+
+        </div>
+      </div>
+
+      <div class="timeline-item left">
+        <div class="content">
+          <h4>✈️ Những chuyến đi cùng nhau</h4>
+          <div class="img-wrap">
+            <img src="./images/dichoicungnhau.jpg" alt="Ngày đầu gặp Dương tại lớp Tiếng Anh ở FSoft">
+          </div>
+
+        </div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="content">
+          <h4>💍 Lời cầu hôn</h4>
+          <div class="img-wrap">
+            <img src="./images/loicauhon.jpg" alt="#">
+          </div>
+
+        </div>
+      </div>
+
+      <div class="timeline-item center">
+        <div class="content">
+          <h4>💞 Ngày hạnh phúc trọn vẹn</h4>
+          <p>Và rồi, mọi con đường đều dẫn chúng ta đến ngày hôm nay — nơi hai trái tim hòa chung nhịp đập, bắt đầu một
+            hành trình mới mang tên “Gia đình”.</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- GALLERY -->
+  <section id="gallery" class="container py-5">
+    <h2 class="section-title">Khoảnh khắc</h2>
+    <div class="divider">📸</div>
+    <div class="row g-3 gallery">
+      <template id="tpl-img">
+        <div class="col-6 col-md-4"><img loading="lazy" class="img-fluid" alt="Ảnh cưới"></div>
+      </template>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section id="events" class="wedding-events text-center py-5">
+    <div class="container">
+      <h2 class="section-title text-black">Sự kiện cưới</h2>
+      <div class="divider">🎉</div>
+
+      <div class="event-content">
+        <img src="./images/thiepmoi.jpg" class="event-img" alt="Thiệp mời Lễ Cưới" loading="lazy">
+        <p class="mt-4 text-Black">
+          “Ngày vui trọng đại của chúng mình sắp đến — cùng chung vui và lưu giữ khoảnh khắc hạnh phúc này nhé 💗”
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- MAPS -->
+  <section id="maps" class="container py-5">
+    <h2 class="section-title">Địa điểm tổ chức</h2>
+    <div class="divider">📍</div>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <h5 class="mb-3 text-center">Nhà Hàng Tổ chức</h5>
+        <div class="ratio ratio-16x9">
+          <iframe loading="lazy" title="Bản đồ nhà gái"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3573.519135338081!2d105.73619907508693!3d21.240406680462414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3134fd9310626d8d%3A0x4f13d0f47691f7c9!2zTmjDoCBIw6BuZyBN4bqhbmggSMawxqFuZw!5e1!3m2!1sen!2s!4v1760778653655!5m2!1sen!2s"
+            style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+        <div class="text-center mt-2"><a class="btn btn-primary" target="_blank"
+            href="https://maps.app.goo.gl/uLPUv9kW5jjZ6iBb9">Xem đường đi</a></div>
+      </div>
+      <div class="col-md-6">
+        <h5 class="mb-3 text-center">Nhà Gái</h5>
+        <div class="ratio ratio-16x9">
+          <iframe loading="lazy" title="Bản đồ nhà trai"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5053.645566037472!2d105.73326048564242!3d21.24255513758028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2s!4v1760778294855!5m2!1sen!2s"
+            style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+        <div class="text-center mt-2"><a class="btn btn-primary" target="_blank"
+            href="https://maps.app.goo.gl/WkxWG7GSX4MsuEWY9">Xem đường đi</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WISHES
+  <section class="wish">
+    <h2 class="section-title text-white">Gửi lời chúc mừng</h2>
+    <form>
+      <input type="text" placeholder="Họ và Tên" required>
+      <select>
+        <option value="">Bạn Dâu Rể</option>
+        <option>Bạn Nhà Gái</option>
+        <option>Đồng Nghiệp</option>
+        <option>Người Thân</option>
+        <option>Khác</option>
+      </select>
+      <textarea placeholder="Gửi lời chúc mừng..." required></textarea>
+      <button type="submit">GỬI LỜI CHÚC</button>
+    </form>
+  </section> -->
+
+  <!-- RSVP -->
+  <section class="rsvp">
+    <div class="card-rsvp">
+      <img src="./images/chuhi.png" alt="Ảnh cưới" />
+      <h3 class="title">Xác nhận tham dự</h3>
+      <p class="text-muted">
+        “Sau bao ngày tháng bên nhau, chúng mình quyết định gắn bó trọn đời.
+        Rất mong nhận được xác nhận tham dự và lời chúc phúc từ mọi người!”
+      </p>
+
+      <!-- 👇 nhớ giữ id này để JS bắt form -->
+      <form id="rsvpForm" autocomplete="on">
+        <div class="row-flex">
+          <input type="text" name="name" placeholder="Họ và Tên" required>
+          <input type="tel" name="phone" placeholder="Số điện thoại" inputmode="tel" required>
+        </div>
+
+        <div class="row-flex" >
+          <!-- 👇 thêm value cho radio để không còn “on” -->
+          <label><input type="radio" name="attend" value="Có, tôi sẽ đến" required> Có, tôi sẽ đến</label>
+          <label><input type="radio" name="attend" value="Xin lỗi, tôi bận"> Xin lỗi, tôi bận</label>
+        </div>
+
+        <div class="row-flex">
+          <select name="location" required>
+            <option value="" selected disabled>Nơi tham dự</option>
+            <!-- <option value="Nhà Trai">Nhà Trai</option> -->
+            <option value="Nhà Gái">Nhà Gái</option>
+            <!-- <option value="Không thể tham dự">Không thể tham dự</option> -->
+          </select>
+
+          <select name="people" required>
+            <option value="" selected disabled>Số người</option>
+            <option value="Tôi tới 1 mình">Tôi tới 1 mình</option>
+            <option value="Tôi đi cùng 1 người">Tôi đi cùng người thương</option>
+            <!-- <option value="Tôi đi cùng gia đình">Tôi đi cùng gia đình</option> -->
+          </select>
+        </div>
+
+        <textarea name="message" placeholder="Gửi lời chúc mừng"></textarea>
+        <button class="submit" type="submit">Xác nhận ❤️</button>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- GIFT BOX -->
+  <section class="gift-wrap text-center">
+    <h2 class="section-title">Hộp mừng cưới</h2>
+    <p class="text-muted">Cảm ơn tất cả tình cảm mọi người dành cho <strong>Duy Thành & Thùy Dương</strong>.</p>
+    <button id="giftBtn" class="gift-box" aria-label="Mở hộp mừng"><i class="fa-solid fa-gift"></i></button>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal fade modal-custom" id="giftModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-3 p-md-4">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h2 class="section-title">Hộp mừng cưới</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <p class="mb-3 section-title text-center">
+          Vợ chồng xin cảm ơn tất cả tình cảm của mọi người ạ ❤️
+        </p>
+        <div class="row g-3">
+          <div class="col-12 col-md-6 text-center">
+            <h6 class="mb-2">Mừng cưới đến chú rể</h6>
+            <img src="./images/Qr_ChuRe.jpg" class="qr" alt="QR chú rể" loading="lazy" />
+            <div class="d-grid gap-2 mt-2">
+              <button class="btn btn-outline-secondary" onclick="downloadImg('/images/Qr_ChuRe.jpg')">Tải ảnh
+                QR</button>
+              <button class="btn btn-primary" onclick="copyText('1036247451 - Vietcombank - Le Duy Thanh')">Copy
+                STK</button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 text-center">
+            <h6 class="mb-2">Mừng cưới đến cô dâu</h6>
+            <img src="./images/QrCoDau.jpg" class="qr" alt="QR cô dâu" loading="lazy" />
+            <div class="d-grid gap-2 mt-2">
+              <button class="btn btn-outline-secondary" onclick="downloadImg('/images/QrCoDau.jpg')">Tải ảnh
+                QR</button>
+              <button class="btn btn-primary" onclick="copyText('0301000431210 - Vietcombank - Le Thuy Duong')">Copy
+                STK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center">
+    <p class="m-0">© 2025 Wedding of Duy Thành & Thùy Dương — From tleduy27 with 💖</p>
+  </footer>
+
+  <!-- Vendor JS must load BEFORE app.js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <!-- App JS -->
+  <!-- POPUP -->
+  <div id="popupSuccess" class="popup">
+    <div class="popup-content">
+      <span class="close-btn">&times;</span>
+      <h3>🎉 Xác nhận thành công!</h3>
+      <p>Cảm ơn bạn đã xác nhận tham dự 💖<br>Hẹn gặp lại bạn trong ngày vui của chúng mình!</p>
+    </div>
+  </div>
+  <script src="app.js" defer></script>
+</body>
+
+</html>

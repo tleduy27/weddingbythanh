@@ -1,0 +1,673 @@
+:root{
+  --font-body:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  --font-display:'Dancing Script',cursive;
+  --brand:#f27d9c; --brand-2:#6c63ff; --ink:#222; --muted:#666; --bg:#fff;
+  --shadow:0 8px 24px rgba(0,0,0,.08)
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{font-family:var(--font-body);background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden}
+
+/* ========== HERO ========== */
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center}
+.hero::before{content:"";position:absolute;inset:0;background:url('./images/Bia02.jpg') center/cover no-repeat;filter:brightness(.65)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,.06),rgba(0,0,0,.25))}
+.hero__inner{position:relative;z-index:2;max-width:920px;padding:2rem;top: 70px;}
+.couple{font-family:var(--font-display);font-size:clamp(2rem,6vw,4rem);color:#fff;margin-bottom:.25rem}
+.date{font-weight:600;color:#fff;letter-spacing:.5px}
+.tagline{color:#fff;opacity:.95;margin:.25rem 0 1rem}
+
+/* Hearts */
+.heart{position:fixed;top:-2rem;font-size:1.5rem;pointer-events:none;animation:fall linear forwards;z-index:5}
+@keyframes fall{to{transform:translateY(105vh);opacity:0}}
+
+/* Countdown */
+.countdown {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.time {
+  width: 90px;
+  height: 90px;
+  background: #f6b3ce; /* 🌸 Hồng pastel nhẹ */
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(255, 192, 203, 0.4); /* ánh sáng hồng mờ */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.time:hover {
+  transform: scale(1.08);
+  background: #f6b3ce; /* hơi đậm hơn khi hover */
+}
+
+.time b {
+  display: block;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.time small {
+  opacity: .9;
+  letter-spacing: .08em;
+  font-size: 0.8rem;
+}
+
+/* Section heading */
+.section-title{font-family:var(--font-display);font-size:clamp(1.8rem,4.2vw,2.6rem);text-align:center;margin-bottom:.25rem;color:var(--ink)}
+.divider{display:flex;align-items:center;justify-content:center;gap:.75rem;margin-bottom:2rem}
+.divider::before,.divider::after{content:"";height:2px;width:56px;background:linear-gradient(90deg,transparent,var(--brand),transparent)}
+
+/* Couple */
+.couple-wrap{padding:64px 0;background:#fff}
+.person{max-width:320px;margin:auto;text-align:center}
+.person .photo{border-radius:14px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:.75rem}
+.person .photo img{display:block;width:100%;height:auto}
+.person .name{font-weight:700;color:#e67a90;margin:4px 0}
+.person .role{font-size:.8rem;letter-spacing:.2em;color:#e67a90;margin-bottom:.5rem}
+.person .desc{color:var(--muted);font-size:.95rem}
+
+/* Story band */
+.band{position:relative;padding:84px 0;color:#fff;text-align:center;background:linear-gradient(45deg,rgba(242,125,156,.9),rgba(108,99,255,.9)), url('./images/DSC08967.jpg') center/cover no-repeat;clip-path:polygon(0 0,100% 6%,100% 94%,0 100%)}
+
+/* Gallery */
+.gallery img{width:100%;height:100%;object-fit:cover;border-radius:12px;box-shadow:var(--shadow)}
+
+/* WEDDING EVENTS SECTION – pastel & centered */
+
+
+.wedding-events::before,
+.wedding-events::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 182, 193, 0.25); /* pastel nhẹ, không chói */
+  animation: floaty 10s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+.wedding-events::before {
+  top: -120px;
+  left: -100px;
+  width: 280px;
+  height: 280px;
+}
+
+.wedding-events::after {
+  bottom: -100px;
+  right: -120px;
+  width: 240px;
+  height: 240px;
+  animation-delay: 2s;
+}
+
+@keyframes floaty {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(25px); }
+}
+
+.wedding-events .event-content {
+  position: relative;
+  z-index: 2;
+}
+
+.wedding-events .event-img {
+  max-width: 650px; /* tăng kích thước ảnh */
+  width: 95%;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.wedding-events .event-img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.wedding-events h2.section-title {
+  color: #e75d8d; /* Hồng phấn nhẹ */
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.wedding-events p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  color: #555;
+  margin-top: 20px;
+}
+
+/* Responsive fix */
+@media (max-width: 768px) {
+  .wedding-events .event-img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .wedding-events .event-img {
+    width: 100%;
+  }
+}
+
+/* RSVP & Wishes */
+.wish{max-width:420px;font-family:var(--font-body);margin:48px auto;padding:24px;border-radius:16px;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.45));color:#fff;background-blend-mode:multiply;background-image:url('./images/DSC08998.jpg');background-size:cover;backdrop-filter:blur(2px)}
+.wish input,.wish select,.wish textarea{width:100%;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12);color:#fff;border-radius:8px;padding:.65rem .8rem;margin-bottom:.6rem}
+.wish textarea{resize:none;height:110px}
+.wish button{width:100%;border:0;border-radius:10px;background:#c62828;color:#fff;padding:.75rem 1rem;font-weight:600}
+.wish button:hover{background:#e53935}
+
+.rsvp{display:grid;place-items:center;padding:60px 0}
+.card-rsvp{max-width:460px;width:100%;border:4px solid var(--brand);border-radius:16px;padding:24px;background:#fff;box-shadow:var(--shadow);text-align:center}
+.card-rsvp img{width:140px;height:140px;border-radius:50%;object-fit:cover;border:4px solid var(--brand);margin-bottom:.6rem}
+.card-rsvp .title{font-family:var(--font-display);font-size:2rem;margin-bottom:.25rem}
+.rsvp form{display:grid;gap:.6rem}
+.rsvp .row-flex{display:flex;gap:.6rem;flex-wrap:wrap}
+.rsvp input,.rsvp select,.rsvp textarea{flex:1;border:1px solid #ddd;border-radius:8px;padding:.6rem .7rem}
+.rsvp textarea{height:90px;resize:none}
+.rsvp .submit{background:var(--brand);color:#fff;border:0;border-radius:10px;padding:.75rem 1rem;font-weight:600}
+.rsvp .submit:hover{background:#ff4b6e}
+
+/* Gift modal */
+.gift-wrap{text-align:center;padding:56px 0}
+.gift-box{font-size:48px;display:inline-grid;place-items:center;width:96px;height:96px;border-radius:16px;background:#fff;box-shadow:var(--shadow);cursor:pointer}
+.modal-custom .modal-content{border:0;border-radius:16px;box-shadow:var(--shadow)}
+.qr{width:100%;border-radius:10px}
+
+footer{background:#111;color:#fff;padding:24px 0;margin-top:56px}
+
+/* STORY TIMELINE FIXED */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background: #ff9ec4;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1; /* Đưa đường line ra sau */
+  opacity: 0.8;
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.timeline-item .content {
+  position: relative;
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  z-index: 2; /* Quan trọng: đưa hộp lên trên line */
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-item.center {
+  width: 100%;
+  text-align: center;
+  left: 0;
+}
+
+.timeline-item h4 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  color: #e75480;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+}
+
+.timeline-item p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+.timeline-item small {
+  display: block;
+  color: #888;
+  font-size: 0.85rem;
+  text-align: right;
+}
+
+/* Responsive fix */
+@media (max-width: 768px) {
+  .timeline::after {
+    left: 12px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 20px;
+    margin-bottom: 30px;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
+    text-align: left;
+  }
+
+  .timeline-item .content {
+    margin-left: 20px;
+  }
+}
+
+
+/* MUSIC TOGGLE BUTTON */
+.music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff91a4, #ffb6c1);
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+.music-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.music-btn.playing {
+  background: linear-gradient(135deg, #8ed1fc, #a3e4ff);
+}
+
+.music-btn i {
+  pointer-events: none;
+}
+
+/* Ảnh trong timeline tự căn giữa và co giãn hợp lý */
+.timeline-item .img-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px auto;
+}
+
+.timeline-item .img-wrap img {
+  width: 100%;
+  max-width: 400px;   /* ảnh tối đa 400px, vẫn đủ to cho màn hình lớn */
+  min-width: 220px;   /* không nhỏ quá khi màn hình hẹp */
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item .img-wrap img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive - đảm bảo đẹp trên mobile */
+@media (max-width: 768px) {
+  .timeline-item .img-wrap img {
+    max-width: 100%;
+    width: 90%;
+  }
+}
+
+/* Firebase */
+.wish-list {
+  margin-top: 25px;
+  text-align: left;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.wish-card {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.wish-card:hover {
+  transform: translateY(-2px);
+}
+
+.wish-card .wish-name {
+  font-weight: 600;
+  color: #ffe4e1;
+  margin-top: 5px;
+  font-size: 0.85rem;
+}
+
+.wish-card small {
+  opacity: 0.8;
+}
+/* POPUP */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  z-index: 9999;
+}
+
+.popup.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  animation: fadeInUp 0.4s ease;
+}
+
+.popup-content h3 {
+  color: #e91e63;
+  margin-bottom: 0.5rem;
+}
+
+.popup-content p {
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 1.5rem;
+  color: #777;
+  cursor: pointer;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* === Wedding Gift Modal – pastel pink === */
+.modal-custom .modal-content{
+  /* nền hồng nhạt */
+  background: linear-gradient(180deg,#ffffff 0%, #ffffff 100%);
+  border: 1px solid #ffd1e0;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(255, 105, 180, .18);
+  color: #4b2d3a; /* chữ hơi trầm cho dễ đọc */
+}
+
+/* tiêu đề & heading bên trong */
+.modal-custom h5,
+.modal-custom h6,
+.modal-custom p{
+  color:#4b2d3a;
+}
+
+/* bo góc & bóng nhẹ cho QR */
+.modal-custom .qr{
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(0,0,0,.08);
+}
+
+/* nút trong modal – tông hồng */
+.modal-custom .btn-primary{
+  background:#ff6fa3;
+  border-color:#ff6fa3;
+}
+.modal-custom .btn-primary:hover{
+  background:#ff5a97;
+  border-color:#ff5a97;
+}
+
+/* responsive */
+/* ===== Base small fixes ===== */
+img { max-width: 100%; height: auto; }
+.rsvp .row-flex { gap: .6rem; }
+.rsvp input, .rsvp select, .rsvp textarea { flex: 1 1 220px; } /* 2 cột khi đủ chỗ */
+.rsvp input[type="tel"] { -webkit-user-select: auto; }
+
+/* Countdown bubbles scale */
+@media (max-width: 768px){
+  .hero__inner{ top:40px; padding:1.25rem; }
+  .couple{ font-size: clamp(1.8rem, 7vw, 3.2rem); }
+  .section-title{ font-size: clamp(1.5rem, 5.2vw, 2.1rem); }
+  .time{ width:78px; height:78px; }
+  .card-rsvp{ padding:18px; }
+  .card-rsvp img{ width:110px; height:110px; }
+  .rsvp input, .rsvp select, .rsvp textarea{ flex:1 1 100%; } /* stack 1 cột trên mobile */
+  .timeline{ padding-inline:12px; }
+  .wedding-events .event-img{ width:100%; max-width:100%; }
+  .modal-custom .modal-content{ padding:16px; }
+  .qr{ max-width:260px; margin:auto; }
+}
+
+/* Very small phones (≤ 576px) */
+@media (max-width: 576px){
+  .hero__inner{ top:30px; padding:1rem; }
+  .time{ width:70px; height:70px; }
+  .gift-box{ width:84px; height:84px; }
+  .card-rsvp{ border-width:3px; }
+  .rsvp{ padding:36px 12px; }
+}
+
+/* Tiny devices (≤ 400px, iPhone SE, Android cỡ nhỏ) */
+@media (max-width: 400px){
+  .couple{ font-size: 2rem; }
+  .time{ width:62px; height:62px; }
+  .rsvp .submit{ padding:.65rem; }
+}
+
+/* Timeline mobile already handled; refine spacing a chút */
+@media (max-width: 768px){
+  .timeline::after{ left:12px; }
+  .timeline-item{ width:100%; padding: 0 20px 0 40px; margin-bottom: 26px; }
+  .timeline-item .content{ margin-left: 14px; }
+}
+
+/* Gift Modal – giữ 2 cột ở md, stack ở sm (Bootstrap đã làm). Tinh chỉnh thêm: */
+.modal-custom .modal-content{
+  background: linear-gradient(180deg,#fff 0%, #fff 100%);
+  border: 1px solid #ffd1e0;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(255, 105, 180, .18);
+  color: #4b2d3a;
+}
+.modal-custom h5,.modal-custom h6,.modal-custom p{ color:#4b2d3a; }
+.modal-custom .qr{ border-radius: 12px; box-shadow: 0 8px 22px rgba(0,0,0,.08); }
+.modal-custom .btn-primary{ background:#ff6fa3; border-color:#ff6fa3; }
+.modal-custom .btn-primary:hover{ background:#ff5a97; border-color:#ff5a97; }
+
+/* Hero text không che mặt: hạ nhẹ khi màn hình thấp */
+@media (max-height: 640px){
+  .hero__inner{ top:20px; }
+}
+
+ body {
+      font-family: 'Inter', sans-serif;
+      background: #fffafc;
+      color: #333;
+      margin: 0;
+    }
+
+    /* ===== FORM CARD ===== */
+    .rsvp {
+      display: flex;
+      justify-content: center;
+      padding: 40px 15px;
+    }
+
+    .card-rsvp {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+      max-width: 450px;
+      width: 100%;
+      text-align: center;
+      border: 2px solid #f9cdda;
+    }
+
+    .card-rsvp img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 4px solid #f48fb1;
+    }
+
+    .card-rsvp input,
+    .card-rsvp select,
+    .card-rsvp textarea {
+      width: 100%;
+      margin: .5rem 0;
+      padding: .6rem .8rem;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+
+    .card-rsvp button.submit {
+      background: #f48fb1;
+      border: none;
+      color: white;
+      padding: .7rem 1.5rem;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .card-rsvp button.submit:hover {
+      background: #e91e63;
+    }
+
+    /* ===== POPUP ===== */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+      z-index: 9999;
+    }
+
+    .popup.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .popup-content {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+      max-width: 380px;
+      position: relative;
+      animation: fadeInUp 0.4s ease;
+    }
+
+    .popup-content h3 {
+      color: #e91e63;
+      margin-bottom: .5rem;
+    }
+
+    .popup-content p {
+      color: #444;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5rem;
+      color: #777;
+      cursor: pointer;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+
