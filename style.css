@@ -10,7 +10,7 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--ink);line-hei
 
 /* ========== HERO ========== */
 .hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center}
-.hero::before{content:"";position:absolute;inset:0;background:url('./images/Bia02.jpg') center/cover no-repeat;filter:brightness(.65)}
+.hero::before{content:"";position:absolute;inset:0;background:url('./images/DSC09599.jpg') center/cover no-repeat;filter:brightness(.65)}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,.06),rgba(0,0,0,.25))}
 .hero__inner{position:relative;z-index:2;max-width:920px;padding:2rem;top: 70px;}
 .couple{font-family:var(--font-display);font-size:clamp(2rem,6vw,4rem);color:#fff;margin-bottom:.25rem}
@@ -669,5 +669,84 @@ img { max-width: 100%; height: auto; }
         opacity: 1;
       }
     }
+
+    /* ===== 0. Diệt hoàn toàn tràn ngang trên mọi trình duyệt ===== */
+html, body { width:100%; max-width:100%; }
+html, body { overflow-x: clip; }              /* Chrome/Safari mới */
+@supports not (overflow: clip) {
+  html, body { overflow-x: hidden; }          /* Fallback */
+}
+
+/* ===== 1. Những section có trang trí/pseudo -> luôn clip ngang ===== */
+.hero,
+.story,
+.wedding-events,
+.timeline,
+#maps,
+.gallery,
+.rsvp,
+.gift-wrap,
+footer {
+  position: relative;
+  overflow-x: clip; /* chặn pseudo, transform bay ra ngoài gây scroll */
+}
+
+/* ===== 2. Wedding-events: bóng bay không làm tăng chiều rộng ===== */
+.wedding-events::before,
+.wedding-events::after { pointer-events:none; }
+/* (đã có position absolute), cần container clip như trên */
+
+/* ===== 3. Maps/iframe: cố định tỉ lệ, ép width 100% và clip ===== */
+#maps .ratio { width:100%; border-radius:12px; overflow: hidden; }
+#maps .ratio > iframe { display:block; width:100% !important; height:100% !important; }
+
+/* ===== 4. Ảnh & inline media: loại khoảng trắng lẻ, không min-width cứng ===== */
+img, iframe, video, canvas { display:block; max-width:100%; height:auto; }
+.timeline-item .img-wrap img { min-width:0; } /* tránh ép rộng khi khung nhỏ */
+
+/* ===== 5. Luôn “ra giữa” khi co nhỏ ===== */
+.container, .gallery, .rsvp, .gift-wrap, .wedding-events .event-content { margin-inline:auto; }
+.text-center, .section-title, .timeline-item.center { text-align:center; }
+
+/* Timeline: giới hạn chiều ngang theo viewport để không tràn */
+.timeline { 
+  max-width: min(900px, 100% - 24px);
+  margin: 40px auto;
+}
+
+/* Mobile: timeline + countdown thu gọn và căn giữa */
+@media (max-width: 768px){
+  .timeline::after{ left:12px; }
+  .timeline-item{ width:100%; padding: 0 20px 0 40px; margin-bottom:26px; text-align:center; }
+  .timeline-item.left, .timeline-item.right{ left:0; }
+  .timeline-item .content{ margin-left:0; }
+}
+
+/* Siêu nhỏ (≤360px): co bubble countdown & spacing */
+@media (max-width: 360px){
+  .time{ width:58px; height:58px; }
+  .time b{ font-size:1.2rem; }
+  .time small{ font-size:.72rem; }
+  .timeline-item{ padding: 0 16px 0 34px; margin-bottom:22px; }
+}
+
+/* ===== 6. Nút nhạc tôn trọng safe-area & không che modal ===== */
+:root{
+  --safe-b: max(env(safe-area-inset-bottom, 0px), 12px);
+  --safe-r: max(env(safe-area-inset-right, 0px), 12px);
+}
+.music-btn{
+  bottom: calc(16px + var(--safe-b));
+  right:  calc(16px + var(--safe-r));
+  z-index: 1040;               /* < Bootstrap modal (1055) */
+}
+.modal-open .music-btn{ opacity:0; pointer-events:none; }
+
+/* ===== 7. Chặn mọi phần tử “ngông cuồng” vượt quá viền layout ===== */
+* { box-sizing: border-box; }
+*[style*="width:"], *[style*="left:"], *[style*="right:"], *[style*="transform: translateX"] {
+  max-width: 100vw;             /* lưới an toàn chống overflow */
+}
+
 
 
